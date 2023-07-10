@@ -1,0 +1,25 @@
+{% extends "structure.html" %}
+{% block page_content %}
+<h1>Create Account</h1>
+<form method="POST" action="{{ url_for('signup') }}">
+    {{user.csrf_token}}
+    <div>
+        {{ user.username.label }} {{ user.username }}
+    </div>
+    <div>
+        {{ user.first_name.label }} {{ user.first_name }}
+    </div>
+    <div>
+        {{ user.last_name.label }} {{ user.last_name }}
+    </div>
+    <div>
+        {{ user.email.label }} {{ user.email }}
+    </div>
+    <div>
+        {{ user.password.label }} {{ user.password }}
+    </div>
+    <div>
+        <input type="submit" value="Save">
+    </div>
+</form>
+{% endblock %}
